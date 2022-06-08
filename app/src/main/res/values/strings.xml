@@ -6,4 +6,6 @@
     <string name="cd_order_status">Статус заказа</string>
     <string name="cd_order_delivery_date">Дата доставки</string>
     <string name="cd_order_delivery_time">Время доставки</string>
+    <string name="cd_order_address">Адрес забора и доставки груза</string>
+    <string name="cd_order_comment">Комментарии к заказу</string>
 </resources>
