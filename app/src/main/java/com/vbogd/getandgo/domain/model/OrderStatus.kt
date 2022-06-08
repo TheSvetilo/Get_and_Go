@@ -1,6 +1,6 @@
 package com.vbogd.getandgo.domain.model
 
-enum class Status {
+enum class OrderStatus {
     BOOKING_READY,
 
 }

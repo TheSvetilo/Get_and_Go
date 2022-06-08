@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuChoice"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="@string/menu_choice" />
+
+    <item
+        android:id="@+id/menu_Orders"
+        android:icon="@drawable/ic_outline_folder_copy_24"
+        android:title="@string/menu_orders" />
+
+    <item
+        android:id="@+id/menuProfile"
+        android:icon="@drawable/ic_outline_person_24"
+        android:title="@string/menu_profile" />
+
+</menu>

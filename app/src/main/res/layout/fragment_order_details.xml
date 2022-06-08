@@ -281,8 +281,9 @@
         android:id="@+id/orderChangeStatusButton"
         android:layout_width="match_parent"
         android:layout_height="64dp"
+        android:layout_gravity="bottom"
         android:layout_marginHorizontal="8dp"
-        tools:text="Получить груз"
-        android:layout_gravity="bottom"/>
+        android:backgroundTint="@color/black"
+        tools:text="Выехал за грузом" />
 
 </FrameLayout>

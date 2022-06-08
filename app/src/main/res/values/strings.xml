@@ -8,4 +8,9 @@
     <string name="cd_order_delivery_time">Время доставки</string>
     <string name="cd_order_address">Адрес забора и доставки груза</string>
     <string name="cd_order_comment">Комментарии к заказу</string>
+    <string name="menu_choice">Выбор</string>
+    <string name="menu_orders">Заявки</string>
+    <string name="menu_profile">Профиль</string>
+
+    <string name="order_price">%1$d P</string>
 </resources>
