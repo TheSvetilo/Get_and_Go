@@ -12,8 +12,8 @@ class OrderService : OrderRepository {
         return orders
     }
 
-    override fun getOrder(id: Int): Order {
-        TODO("Not yet implemented")
+    override fun getOrder(id: Int): Order? {
+        return orders.find { it.id == id }
     }
 
     override fun getOrdersByStatus(status: OrderStatus): List<Order> {

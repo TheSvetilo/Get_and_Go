@@ -101,6 +101,7 @@
                 android:id="@+id/orderCity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@{ order.addressTo.city }"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@id/orderBarrier"
                 app:layout_constraintTop_toTopOf="@id/orderPointImageView"
@@ -110,7 +111,7 @@
                 android:id="@+id/orderAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{ order.addressTo }"
+                android:text="@{ order.addressTo.toString() }"
                 app:layout_constraintStart_toEndOf="@id/orderBarrier"
                 app:layout_constraintTop_toBottomOf="@id/orderCity"
                 tools:text="Московский пр., д.33, корп.7, кв.21" />
@@ -141,11 +142,11 @@
                         android:src="@drawable/ic_baseline_scale_24" />
 
                     <TextView
-                        weight="@{ order.weight }"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:textColor="@color/black"
+                        app:weight="@{ order.weight }"
                         tools:text="20 кг" />
                 </LinearLayout>
 
@@ -169,6 +170,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:textColor="@color/black"
+                        app:orderSize="@{ order }"
                         tools:text="0.5 x 0.3 x 0.2 м" />
                 </LinearLayout>
 
@@ -212,8 +214,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="@{ order.deliveryTimeFrom }"
                         android:textColor="@color/black"
+                        app:orderDeliveryTime="@{ order }"
                         tools:text="18:00 - 19:00" />
                 </LinearLayout>
 

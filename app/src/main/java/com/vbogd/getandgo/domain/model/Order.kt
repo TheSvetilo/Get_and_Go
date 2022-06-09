@@ -14,13 +14,16 @@ data class Order(
     val price: Double,
 
     // Size Options
-    val weight: Long,
+    val weight: Double,
+    val height: Double,
+    val width: Double,
+    val length: Double,
 
     // Delivery Options
-//    val addressFrom: Address,
-    val addressFrom: String,
-//    val addressTo: Address,
-    val addressTo: String,
+    val addressFrom: Address,
+//    val addressFrom: String,
+    val addressTo: Address,
+//    val addressTo: String,
     val deliveryDate: String,
     val deliveryTimeFrom: String,
     val deliveryTimeTo: String,

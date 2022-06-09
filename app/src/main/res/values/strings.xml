@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Get and Go</string>
-    <string name="cd_package_size">Размер груза</string>
+    <string name="cd_package_size">Размер груза (ширина, высота, глубина)</string>
     <string name="cd_package_weight">Вес груза</string>
     <string name="cd_delivery_address">Адрес доставки</string>
     <string name="cd_order_status">Статус заказа</string>
