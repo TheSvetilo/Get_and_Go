@@ -73,7 +73,7 @@ class OrderData {
                 ),
                 addressTo = Address(
                     id = 4,
-                    city = "г. Санкт - Петербург",
+                    city = "г. Гатчина",
                     street = "Ленинский пр.",
                     homeNumber = "22",
                     floor = 1,
@@ -128,7 +128,7 @@ class OrderData {
                 status = OrderStatus.BOOKING_READY,
                 shortDescription = "Документы",
                 comment = "Только ночью",
-                price = 1200.90,
+                price = 400.00,
                 weight = 54.9,
                 height = 0.5,
                 width = 1.1,
@@ -145,11 +145,11 @@ class OrderData {
                 ),
                 addressTo = Address(
                     id = 8,
-                    city = "г. Санкт - Петербург",
+                    city = "г. Ломоносов",
                     street = "Ленинский пр.",
-                    homeNumber = "22",
+                    homeNumber = "122",
                     floor = 1,
-                    flatNumber = 32,
+                    flatNumber = 332,
                     longitude = "60.05967680955991",
                     latitude = "30.334754426123975"
                 ),

@@ -13,8 +13,19 @@ class OrderListViewModel : ViewModel() {
     private val _orders = MutableLiveData<List<Order>>()
     val orders: LiveData<List<Order>> = _orders
 
+    private val _navigateToOrderDetails = MutableLiveData<Order?>()
+    val navigateToOrderDetails: LiveData<Order?> = _navigateToOrderDetails
+
     init {
         _orders.value = repository.getOrders()
+    }
+
+    fun displayOrderDetails(order: Order) {
+        _navigateToOrderDetails.value = order
+    }
+
+    fun displayOrderDetailsComplete() {
+        _navigateToOrderDetails.value = null
     }
 
 }

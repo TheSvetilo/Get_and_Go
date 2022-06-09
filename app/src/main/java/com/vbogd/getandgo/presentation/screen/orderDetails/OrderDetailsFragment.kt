@@ -16,12 +16,12 @@ import com.yandex.mapkit.mapview.MapView
 
 class OrderDetailsFragment : Fragment() {
 
-    companion object {
-        const val MAPKIT_API_KEY = "2058688b-1593-42a3-8789-b3c09d1b4b9e"
-    }
-
     private val viewModel by lazy {
-        ViewModelProvider(this).get(OrderDetailsViewModel::class.java)
+        val order = OrderDetailsFragmentArgs.fromBundle(requireArguments()).selectedOrder
+        ViewModelProvider(
+            this,
+            OrderDetailsViewModelFactory(order)
+        ).get(OrderDetailsViewModel::class.java)
     }
 
     private lateinit var mapView: MapView
@@ -31,10 +31,6 @@ class OrderDetailsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-        MapKitFactory.setApiKey(MAPKIT_API_KEY)
-        Log.d("TAG", MAPKIT_API_KEY)
-        MapKitFactory.initialize(requireActivity().applicationContext)
 
         val binding = FragmentOrderDetailsBinding.inflate(inflater)
 
@@ -55,6 +51,7 @@ class OrderDetailsFragment : Fragment() {
                 null
             )
         }
+
         return binding.root
     }
 

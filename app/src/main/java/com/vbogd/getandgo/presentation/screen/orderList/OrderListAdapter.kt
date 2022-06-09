@@ -8,7 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.vbogd.getandgo.databinding.OrderItemBinding
 import com.vbogd.getandgo.domain.model.Order
 
-class OrderListAdapter : ListAdapter<Order, OrderListAdapter.OrderViewHolder>(DiffCallback()) {
+class OrderListAdapter(private val clickListener: OnClickListener) :
+    ListAdapter<Order, OrderListAdapter.OrderViewHolder>(DiffCallback()) {
 
     class OrderViewHolder(private val binding: OrderItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -25,9 +26,11 @@ class OrderListAdapter : ListAdapter<Order, OrderListAdapter.OrderViewHolder>(Di
 
     override fun onBindViewHolder(holder: OrderViewHolder, position: Int) {
         val order = getItem(position)
+        holder.itemView.setOnClickListener {
+            clickListener.onClick(order)
+        }
         holder.bind(order)
     }
-
 }
 
 class DiffCallback : DiffUtil.ItemCallback<Order>() {
@@ -38,4 +41,8 @@ class DiffCallback : DiffUtil.ItemCallback<Order>() {
     override fun areContentsTheSame(oldItem: Order, newItem: Order): Boolean {
         return oldItem.id == newItem.id
     }
+}
+
+class OnClickListener(val clickListener: (order: Order) -> Unit) {
+    fun onClick(order: Order) = clickListener(order)
 }

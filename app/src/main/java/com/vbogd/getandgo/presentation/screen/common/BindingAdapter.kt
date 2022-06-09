@@ -18,6 +18,7 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<Order>?) {
 @BindingAdapter("price")
 fun bindPrice(text: TextView, price: Double) {
     text.text = "$price руб."
+//    text.text = text.context.getString(R.string.order_price, price)
 }
 
 @BindingAdapter("weight")
@@ -38,6 +39,7 @@ fun bindDeliveryTime(text: TextView, order: Order) {
 @BindingAdapter("orderStatus")
 fun bindButtonText(btn: Button, status: OrderStatus) {
     when (status) {
-        OrderStatus.BOOKING_READY -> btn.text = "Выехал за грузом"
+        OrderStatus.BOOKING_READY -> btn.text =
+            btn.context.getString(R.string.order_status_booking_ready)
     }
 }

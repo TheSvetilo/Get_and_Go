@@ -12,5 +12,6 @@
     <string name="menu_orders">Заявки</string>
     <string name="menu_profile">Профиль</string>
 
-    <string name="order_price">%1$d P</string>
+    <string name="order_price">%1$d руб.</string>
+    <string name="order_status_booking_ready">Забронировать</string>
 </resources>
