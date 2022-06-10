@@ -17,14 +17,13 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="8dp"
         android:layout_marginTop="4dp"
-        app:cardBackgroundColor="@color/cardview_shadow_end_color"
         app:cardCornerRadius="8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="8dp"
-            android:layout_marginVertical="16dp">
+            android:layout_marginVertical="8dp">
 
             <LinearLayout
                 android:id="@+id/linearTop"
@@ -53,6 +52,7 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
                     app:cardCornerRadius="8dp">
 
                     <TextView
@@ -83,7 +83,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="6dp"
                 android:contentDescription="@string/cd_delivery_address"
                 android:src="@drawable/ic_baseline_location_on_24"
                 app:layout_constraintEnd_toStartOf="@id/orderBarrier"

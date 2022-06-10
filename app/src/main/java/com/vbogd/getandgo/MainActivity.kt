@@ -2,7 +2,9 @@ package com.vbogd.getandgo
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.vbogd.getandgo.presentation.screen.orderDetails.OrderDetailsFragment
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.yandex.mapkit.MapKitFactory
 
 class MainActivity : AppCompatActivity() {
@@ -18,5 +20,12 @@ class MainActivity : AppCompatActivity() {
         MapKitFactory.initialize(this.applicationContext)
 
         setContentView(R.layout.activity_main)
+
+        val navHost =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHost.navController
+        val navView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        NavigationUI.setupWithNavController(navView, navController)
+
     }
 }
