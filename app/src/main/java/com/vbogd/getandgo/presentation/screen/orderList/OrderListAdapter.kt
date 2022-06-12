@@ -21,7 +21,13 @@ class OrderListAdapter(private val clickListener: OnClickListener) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
-        return OrderViewHolder(OrderItemBinding.inflate(LayoutInflater.from(parent.context)))
+        return OrderViewHolder(
+            OrderItemBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
     }
 
     override fun onBindViewHolder(holder: OrderViewHolder, position: Int) {
