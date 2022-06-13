@@ -13,11 +13,11 @@ class OrderService : OrderRepository {
     }
 
     override fun getOrder(id: Int): Order? {
-        return orders.find { it.id == id }
+        return orders.findLast { it.id == id }
     }
 
     override fun getOrdersByStatus(status: OrderStatus): List<Order> {
-        TODO("Not yet implemented")
+        return orders.filter { it.status == status }
     }
 
 }

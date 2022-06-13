@@ -38,12 +38,12 @@ class OrderData {
                 addressTo = Address(
                     id = 2,
                     city = "г. Санкт - Петербург",
-                    street = "Ленинский пр.",
-                    homeNumber = "22",
+                    street = "Елагин остаров.",
+                    homeNumber = "4",
                     floor = 1,
                     flatNumber = 32,
-                    longitude = "30.334754426123975",
-                    latitude = "60.05967680955991"
+                    longitude = "30.283287744957498",
+                    latitude = "59.97947861580965"
                 ),
                 deliveryDate = "20/06",
                 deliveryTimeFrom = "18:00",
@@ -73,13 +73,13 @@ class OrderData {
                 ),
                 addressTo = Address(
                     id = 4,
-                    city = "г. Гатчина",
+                    city = "г. Санкт - Петербург",
                     street = "Ленинский пр.",
                     homeNumber = "22",
                     floor = 1,
                     flatNumber = 32,
-                    longitude = "60.05967680955991",
-                    latitude = "30.334754426123975"
+                    longitude = "30.283287744957498",
+                    latitude = "59.97947861580965"
                 ),
                 deliveryDate = "15/06",
                 deliveryTimeFrom = "12:00",
@@ -89,7 +89,7 @@ class OrderData {
             Order(
                 id = 3,
                 number = "№85565928333456",
-                status = OrderStatus.BOOKING_READY,
+                status = OrderStatus.RESERVED,
                 shortDescription = "Хлам",
                 comment = "Слепые",
                 price = 1200.90,
@@ -109,13 +109,13 @@ class OrderData {
                 ),
                 addressTo = Address(
                     id = 6,
-                    city = "г. Выборг",
-                    street = "Ленинский пр.",
-                    homeNumber = "43",
+                    city = "г. Санкт - Петербург",
+                    street = "Коломяжский пр.",
+                    homeNumber = "17",
                     floor = 1,
                     flatNumber = 32,
-                    longitude = "60.05967680955991",
-                    latitude = "30.334754426123975"
+                    longitude = "30.3006042081831",
+                    latitude = "60.00557237785357"
                 ),
                 deliveryDate = "11/07",
                 deliveryTimeFrom = "11:00",
@@ -125,7 +125,7 @@ class OrderData {
             Order(
                 id = 4,
                 number = "№79283928333456",
-                status = OrderStatus.BOOKING_READY,
+                status = OrderStatus.DELIVERY,
                 shortDescription = "Документы",
                 comment = "Только ночью",
                 price = 400.00,
@@ -145,13 +145,49 @@ class OrderData {
                 ),
                 addressTo = Address(
                     id = 8,
-                    city = "г. Ломоносов",
-                    street = "Ленинский пр.",
+                    city = "г. Санкт - Петербург",
+                    street = "ул. Льва Толстого",
                     homeNumber = "122",
                     floor = 1,
                     flatNumber = 332,
+                    longitude = "30.31272992467957",
+                    latitude = "59.96538752680515"
+                ),
+                deliveryDate = "19/04",
+                deliveryTimeFrom = "02:00",
+                deliveryTimeTo = "04:00",
+                contactPerson = "Владислав Богданов"
+            ),
+            Order(
+                id = 5,
+                number = "№79283928333456",
+                status = OrderStatus.DELIVERY,
+                shortDescription = "Рассол",
+                comment = "Только летом",
+                price = 400.00,
+                weight = 54.9,
+                height = 0.5,
+                width = 1.1,
+                length = 2.2,
+                addressFrom = Address(
+                    id = 9,
+                    city = "г. Санкт - Петербург",
+                    street = "Московский пр.",
+                    homeNumber = "33",
+                    floor = 6,
+                    flatNumber = 33,
                     longitude = "60.05967680955991",
                     latitude = "30.334754426123975"
+                ),
+                addressTo = Address(
+                    id = 10,
+                    city = "г. Санкт - Петербург",
+                    street = "Пулковское шоссе",
+                    homeNumber = "122",
+                    floor = 1,
+                    flatNumber = 2,
+                    longitude = "30.31821350128469",
+                    latitude = "59.819289641095125"
                 ),
                 deliveryDate = "19/04",
                 deliveryTimeFrom = "02:00",

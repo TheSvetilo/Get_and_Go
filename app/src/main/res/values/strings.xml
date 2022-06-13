@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Delivery</string>
+
     <string name="cd_package_size">Размер груза (ширина, высота, глубина)</string>
     <string name="cd_package_weight">Вес груза</string>
     <string name="cd_delivery_address">Адрес доставки</string>
@@ -8,13 +9,22 @@
     <string name="cd_order_delivery_time">Время доставки</string>
     <string name="cd_order_address">Адрес забора и доставки груза</string>
     <string name="cd_order_comment">Комментарии к заказу</string>
+
     <string name="menu_choice">Поиск</string>
     <string name="menu_orders">Заявки</string>
     <string name="menu_profile">Профиль</string>
 
     <string name="order_price">%1$d руб.</string>
     <string name="order_status_booking_ready">Забронировать</string>
+    <string name="order_status_delivery_ready">Груз забран</string>
+    <string name="order_status_finished_ready">Груз доставлен</string>
+    <string name="order_status_canceled">Доставка отменена</string>
+
+
     <string name="profile_settings_logout">Выйти из приложения</string>
     <string name="profile_settings_change_email">Изменить e-mail</string>
     <string name="profile_settings_change_password">Изменить пароль</string>
+
+    <string name="tab_reserved">Забронировано</string>
+    <string name="tab_delivery">В доставке</string>
 </resources>

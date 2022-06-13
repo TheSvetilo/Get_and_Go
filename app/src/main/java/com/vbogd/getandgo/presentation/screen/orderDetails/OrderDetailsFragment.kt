@@ -33,7 +33,7 @@ class OrderDetailsFragment : Fragment() {
 
         val binding = FragmentOrderDetailsBinding.inflate(inflater)
 
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
 
         mapView = binding.mapview

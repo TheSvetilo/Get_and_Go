@@ -38,8 +38,13 @@ fun bindDeliveryTime(text: TextView, order: Order) {
 
 @BindingAdapter("orderStatus")
 fun bindButtonText(btn: Button, status: OrderStatus) {
-    when (status) {
-        OrderStatus.BOOKING_READY -> btn.text =
+    btn.text = when (status) {
+        OrderStatus.BOOKING_READY ->
             btn.context.getString(R.string.order_status_booking_ready)
+        OrderStatus.RESERVED ->
+            btn.context.getString(R.string.order_status_delivery_ready)
+        OrderStatus.DELIVERY ->
+            btn.context.getString(R.string.order_status_finished_ready)
+        else -> btn.context.getString(R.string.order_status_canceled)
     }
 }

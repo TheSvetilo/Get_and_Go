@@ -11,9 +11,11 @@
         <entry key="..\:/_vlad/_dev/GetandGo/app/src/main/res/drawable/ic_outline_file_open_24.xml" value="0.2475" />
         <entry key="..\:/_vlad/_dev/GetandGo/app/src/main/res/drawable/ic_outline_inventory_8.xml" value="0.2475" />
         <entry key="..\:/_vlad/_dev/GetandGo/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/_vlad/_dev/GetandGo/app/src/main/res/layout/fragment_my_order.xml" value="0.1" />
         <entry key="..\:/_vlad/_dev/GetandGo/app/src/main/res/layout/fragment_order_details.xml" value="0.25" />
         <entry key="..\:/_vlad/_dev/GetandGo/app/src/main/res/layout/fragment_order_item.xml" value="0.3241160471441523" />
         <entry key="..\:/_vlad/_dev/GetandGo/app/src/main/res/layout/fragment_order_list.xml" value="0.33" />
+        <entry key="..\:/_vlad/_dev/GetandGo/app/src/main/res/layout/fragment_orders_map.xml" value="0.17425825323861263" />
         <entry key="..\:/_vlad/_dev/GetandGo/app/src/main/res/layout/fragment_profile.xml" value="0.3241160471441523" />
         <entry key="..\:/_vlad/_dev/GetandGo/app/src/main/res/layout/fragment_profile_settings.xml" value="0.33" />
         <entry key="..\:/_vlad/_dev/GetandGo/app/src/main/res/layout/order_item.xml" value="0.33" />

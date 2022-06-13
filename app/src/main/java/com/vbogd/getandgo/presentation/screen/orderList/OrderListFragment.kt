@@ -5,11 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.vbogd.getandgo.R
 import com.vbogd.getandgo.databinding.FragmentOrderListBinding
 
 class OrderListFragment : Fragment() {
@@ -25,7 +22,7 @@ class OrderListFragment : Fragment() {
     ): View {
         val binding = FragmentOrderListBinding.inflate(inflater)
 
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
         binding.recyclerView.adapter = OrderListAdapter(OnClickListener {
             viewModel.displayOrderDetails(it)
