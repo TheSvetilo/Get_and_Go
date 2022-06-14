@@ -1,12 +1,12 @@
 package com.vbogd.getandgo.presentation.screen.orderList
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
+import com.vbogd.getandgo.R
 import com.vbogd.getandgo.databinding.FragmentOrderListBinding
 
 class OrderListFragment : Fragment() {
@@ -30,11 +30,28 @@ class OrderListFragment : Fragment() {
 
         viewModel.navigateToOrderDetails.observe(viewLifecycleOwner) { orderId ->
             if (orderId != null) {
-                this.findNavController().navigate(OrderListFragmentDirections.actionShowDetails(orderId))
+                this.findNavController()
+                    .navigate(OrderListFragmentDirections.actionShowDetails(orderId))
                 viewModel.displayOrderDetailsComplete()
             }
         }
 
+        setHasOptionsMenu(true)
+
         return binding.root
     }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_map, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menuItemMap -> this.findNavController()
+                .navigate(OrderListFragmentDirections.actionOrderListFragmentToOrderMapFragment())
+        }
+        return true
+    }
+
 }

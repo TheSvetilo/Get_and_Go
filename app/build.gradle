@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -52,4 +53,12 @@ dependencies {
     // map
     implementation 'com.yandex.android:maps.mobile:4.1.0-lite'
     implementation 'com.yandex.android:maps.mobile:4.1.0-full'
+
+    // hilt
+    implementation 'com.google.dagger:hilt-android:2.42'
+    kapt 'com.google.dagger:hilt-compiler:2.42'
+}
+
+kapt {
+    correctErrorTypes true
 }

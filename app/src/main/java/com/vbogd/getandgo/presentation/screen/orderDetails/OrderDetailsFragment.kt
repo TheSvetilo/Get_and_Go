@@ -6,12 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.vbogd.getandgo.R
 import com.vbogd.getandgo.databinding.FragmentOrderDetailsBinding
 import com.yandex.mapkit.Animation
+import com.yandex.mapkit.MapKit
 import com.yandex.mapkit.MapKitFactory
 import com.yandex.mapkit.geometry.Point
 import com.yandex.mapkit.map.CameraPosition
 import com.yandex.mapkit.mapview.MapView
+import com.yandex.runtime.image.ImageProvider
 
 class OrderDetailsFragment : Fragment() {
 
@@ -38,16 +41,21 @@ class OrderDetailsFragment : Fragment() {
 
         mapView = binding.mapview
         viewModel.selectedOrder.observe(viewLifecycleOwner) { order ->
+
+            val point = Point(
+                order.addressTo.latitude.toDouble(),
+                order.addressTo.longitude.toDouble()
+            )
+
             mapView.map.move(
-                CameraPosition(
-                    Point(
-                        order.addressTo.latitude.toDouble(),
-                        order.addressTo.longitude.toDouble()
-                    ),
-                    14.0f, 0.0f, 0.0f
-                ),
+                CameraPosition(point, 14.0f, 0.0f, 0.0f),
                 Animation(Animation.Type.SMOOTH, 5F),
                 null
+            )
+
+            mapView.map.mapObjects.addPlacemark(
+                point,
+                ImageProvider.fromResource(requireContext(), R.drawable.ic_baseline_search_24)
             )
         }
 

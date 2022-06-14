@@ -38,7 +38,7 @@ class OrderData {
                 addressTo = Address(
                     id = 2,
                     city = "г. Санкт - Петербург",
-                    street = "Елагин остаров.",
+                    street = "Елагин остров",
                     homeNumber = "4",
                     floor = 1,
                     flatNumber = 32,
@@ -78,8 +78,8 @@ class OrderData {
                     homeNumber = "22",
                     floor = 1,
                     flatNumber = 32,
-                    longitude = "30.283287744957498",
-                    latitude = "59.97947861580965"
+                    longitude = "30.3006042081831",
+                    latitude = "60.00557237785357"
                 ),
                 deliveryDate = "15/06",
                 deliveryTimeFrom = "12:00",

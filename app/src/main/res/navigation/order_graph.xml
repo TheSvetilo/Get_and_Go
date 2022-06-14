@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_showDetails"
             app:destination="@id/orderDetailsFragment" />
+        <action
+            android:id="@+id/action_orderListFragment_to_orderMapFragment"
+            app:destination="@id/orderMapFragment" />
     </fragment>
     <fragment
         android:id="@+id/orderDetailsFragment"
@@ -23,4 +26,9 @@
             android:name="selectedOrder"
             app:argType="com.vbogd.getandgo.domain.model.Order" />
     </fragment>
+    <fragment
+        android:id="@+id/orderMapFragment"
+        android:name="com.vbogd.getandgo.presentation.screen.orderList.orderMap.OrderMapFragment"
+        android:label="OrderMapFragment"
+        tools:layout="@layout/fragment_orders_map" />
 </navigation>

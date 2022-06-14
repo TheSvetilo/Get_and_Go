@@ -27,4 +27,5 @@
 
     <string name="tab_reserved">Забронировано</string>
     <string name="tab_delivery">В доставке</string>
+    <string name="menu_item_map">Карта</string>
 </resources>
