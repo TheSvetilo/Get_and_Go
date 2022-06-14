@@ -3,17 +3,17 @@ package com.vbogd.getandgo.presentation.screen.orderList
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.NavigationUI
 import com.vbogd.getandgo.R
 import com.vbogd.getandgo.databinding.FragmentOrderListBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OrderListFragment : Fragment() {
 
-    private val viewModel: OrderListViewModel by lazy {
-        ViewModelProvider(this).get(OrderListViewModel::class.java)
-    }
+    private val viewModel: OrderListViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

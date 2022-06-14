@@ -1,10 +1,13 @@
-package com.vbogd.getandgo.data
+package com.vbogd.getandgo.data.local
 
 import com.vbogd.getandgo.domain.model.Address
 import com.vbogd.getandgo.domain.model.Order
 import com.vbogd.getandgo.domain.model.OrderStatus
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class OrderData {
+@Singleton
+class OrderTestData @Inject constructor() : OrderLocalDataSource {
 
     var orders = listOf<Order>()
 
@@ -195,5 +198,13 @@ class OrderData {
                 contactPerson = "Владислав Богданов"
             )
         )
+    }
+
+    override suspend fun getOrder(id: Int): Order? {
+        return orders.findLast { it.id == id }
+    }
+
+    override suspend fun getOrdersByStatus(status: OrderStatus): List<Order> {
+        return orders.filter { it.status == status }
     }
 }

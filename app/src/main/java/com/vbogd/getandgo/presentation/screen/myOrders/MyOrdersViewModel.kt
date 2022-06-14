@@ -1,16 +1,22 @@
 package com.vbogd.getandgo.presentation.screen.myOrders
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.vbogd.getandgo.data.OrderService
+import androidx.lifecycle.viewModelScope
+import com.vbogd.getandgo.domain.OrderRepository
 import com.vbogd.getandgo.domain.model.Order
 import com.vbogd.getandgo.domain.model.OrderStatus
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class MyOrdersViewModel : ViewModel() {
-
-    private val repository = OrderService()
+@HiltViewModel
+class MyOrdersViewModel @Inject constructor(
+    private val repository: OrderRepository
+) : ViewModel() {
 
     private val _orders = MutableLiveData<List<Order>>()
     val orders: LiveData<List<Order>> = _orders
@@ -22,15 +28,17 @@ class MyOrdersViewModel : ViewModel() {
     val navigateToOrderDetails: LiveData<Order?> = _navigateToOrderDetails
 
     init {
-        _orders.value = repository.getOrdersByStatus(OrderStatus.RESERVED)
-        Log.d("TAG", _orders.value.toString())
-//        getOrdersByStatus(OrderStatus.RESERVED)
+        getMyOrders(OrderStatus.RESERVED)
     }
 
-    fun getOrdersByStatus(orderStatus: OrderStatus) {
-        repository.getOrdersByStatus(orderStatus).let { orderList ->
-            _orders.value = orderList
-            _ordersCount.value = orderList.size
+    private fun getMyOrders(status: OrderStatus) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.getOrdersByStatus(status).let {
+                withContext(Dispatchers.Main) {
+                    _orders.value = it
+                    _ordersCount.value = it?.size
+                }
+            }
         }
     }
 

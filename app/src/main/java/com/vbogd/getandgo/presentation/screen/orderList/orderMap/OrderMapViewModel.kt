@@ -3,11 +3,20 @@ package com.vbogd.getandgo.presentation.screen.orderList.orderMap
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.vbogd.getandgo.data.OrderService
+import androidx.lifecycle.viewModelScope
+import com.vbogd.getandgo.domain.OrderRepository
 import com.vbogd.getandgo.domain.model.Order
 import com.vbogd.getandgo.domain.model.OrderStatus
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class OrderMapViewModel : ViewModel() {
+@HiltViewModel
+class OrderMapViewModel @Inject constructor(
+    private val repository: OrderRepository
+) : ViewModel() {
 
     private val _orders = MutableLiveData<List<Order>>()
     val orders: LiveData<List<Order>> = _orders
@@ -15,10 +24,18 @@ class OrderMapViewModel : ViewModel() {
     private val _navigateToOrderDetails = MutableLiveData<Order?>()
     val navigateToOrderDetails: LiveData<Order?> = _navigateToOrderDetails
 
-    private val repository = OrderService()
-
     init {
-        _orders.value = repository.getOrdersByStatus(OrderStatus.BOOKING_READY)
+        getOrdersForBooking()
+    }
+
+    private fun getOrdersForBooking() {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.getOrdersByStatus(OrderStatus.BOOKING_READY).let {
+                withContext(Dispatchers.Main) {
+                    _orders.value = it
+                }
+            }
+        }
     }
 
     fun displayOrderDetails(order: Order) {

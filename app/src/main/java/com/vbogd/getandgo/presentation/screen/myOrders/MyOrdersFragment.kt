@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -14,8 +15,12 @@ import com.vbogd.getandgo.R
 import com.vbogd.getandgo.databinding.FragmentMyOrderBinding
 import com.vbogd.getandgo.presentation.screen.orderList.OnClickListener
 import com.vbogd.getandgo.presentation.screen.orderList.OrderListAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MyOrdersFragment : Fragment() {
+
+    val viewModel: MyOrdersViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,7 +28,6 @@ class MyOrdersFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        val viewModel: MyOrdersViewModel = ViewModelProvider(this).get(MyOrdersViewModel::class.java)
 
         val binding = FragmentMyOrderBinding.inflate(inflater)
 

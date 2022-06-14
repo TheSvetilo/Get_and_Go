@@ -2,7 +2,9 @@ package com.vbogd.getandgo
 
 import android.app.Application
 import com.yandex.mapkit.MapKitFactory
+import dagger.hilt.android.HiltAndroidApp
 
+@HiltAndroidApp
 class App : Application() {
 
     companion object {

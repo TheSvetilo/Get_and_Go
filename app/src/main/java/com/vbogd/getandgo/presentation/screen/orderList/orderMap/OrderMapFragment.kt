@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.vbogd.getandgo.R
 import com.vbogd.getandgo.databinding.FragmentOrdersMapBinding
@@ -14,13 +15,13 @@ import com.yandex.mapkit.geometry.Point
 import com.yandex.mapkit.map.CameraPosition
 import com.yandex.mapkit.mapview.MapView
 import com.yandex.runtime.image.ImageProvider
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OrderMapFragment : Fragment() {
 
     private lateinit var mapView: MapView
-    private val viewModel: OrderMapViewModel by lazy {
-        ViewModelProvider(this).get(OrderMapViewModel::class.java)
-    }
+    private val viewModel: OrderMapViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
