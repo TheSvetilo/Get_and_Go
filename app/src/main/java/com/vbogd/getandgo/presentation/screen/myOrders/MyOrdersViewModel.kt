@@ -24,6 +24,9 @@ class MyOrdersViewModel @Inject constructor(
     private val _ordersCount = MutableLiveData<Int>()
     val ordersCount: LiveData<Int> = _ordersCount
 
+    private val _orderTab = MutableLiveData<Int>()
+    val orderTab: LiveData<Int> = _orderTab
+
     private val _navigateToOrderDetails = MutableLiveData<Order?>()
     val navigateToOrderDetails: LiveData<Order?> = _navigateToOrderDetails
 
@@ -31,7 +34,7 @@ class MyOrdersViewModel @Inject constructor(
         getMyOrders(OrderStatus.RESERVED)
     }
 
-    private fun getMyOrders(status: OrderStatus) {
+    fun getMyOrders(status: OrderStatus) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.getOrdersByStatus(status).let {
                 withContext(Dispatchers.Main) {
@@ -40,6 +43,10 @@ class MyOrdersViewModel @Inject constructor(
                 }
             }
         }
+    }
+
+    fun saveTabState(tabId: Int) {
+        _orderTab.value = tabId
     }
 
     fun displayOrderDetails(order: Order) {
