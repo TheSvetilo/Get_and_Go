@@ -21,9 +21,6 @@ class MyOrdersViewModel @Inject constructor(
     private val _orders = MutableLiveData<List<Order>>()
     val orders: LiveData<List<Order>> = _orders
 
-    private val _ordersCount = MutableLiveData<Int>()
-    val ordersCount: LiveData<Int> = _ordersCount
-
     private val _orderTab = MutableLiveData<Int>()
     val orderTab: LiveData<Int> = _orderTab
 
@@ -39,7 +36,6 @@ class MyOrdersViewModel @Inject constructor(
             repository.getOrdersByStatus(status).let {
                 withContext(Dispatchers.Main) {
                     _orders.value = it
-                    _ordersCount.value = it?.size
                 }
             }
         }

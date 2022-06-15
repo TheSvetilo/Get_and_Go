@@ -34,7 +34,6 @@ class MyOrdersFragment : Fragment() {
 
         binding.recyclerViewMyOrders.adapter = OrderListAdapter(OnClickListener {
             viewModel.displayOrderDetails(it)
-            Log.d("TAG", it.toString())
         })
 
         viewModel.orderTab.observe(viewLifecycleOwner) {
@@ -53,12 +52,7 @@ class MyOrdersFragment : Fragment() {
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
 
-            override fun onTabReselected(tab: TabLayout.Tab?) {
-                when (tab?.position) {
-                    0 -> viewModel.getMyOrders(OrderStatus.RESERVED)
-                    1 -> viewModel.getMyOrders(OrderStatus.DELIVERY)
-                }
-            }
+            override fun onTabReselected(tab: TabLayout.Tab?) {}
         })
 
         viewModel.navigateToOrderDetails.observe(viewLifecycleOwner) { orderDetailsId ->
